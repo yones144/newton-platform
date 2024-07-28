@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة يونس</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 <body>
-    <div id="content" class="hidden">
+    <!-- Login Form -->
+    <div id="login-form">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="code" placeholder="أدخل الكود">
+        <button onclick="validateCode()">تسجيل الدخول</button>
+        <div id="message"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display:none;">
         <h1>منصة يونس</h1>
         <ul class="subject-list">
             <li><a href="subjects/physics.html">فيزياء</a></li>
@@ -33,16 +31,32 @@
             الحقوق محفوظة لدى <a href="https://t.me/tteiio">قناة سادس هيلب</a>
         </div>
     </div>
+
+    <script src="firebase-config.js"></script>
     <script>
-        function checkLogin() {
-            const loggedInUser = localStorage.getItem('loggedInUser');
-            if (loggedInUser) {
-                document.getElementById('content').classList.remove('hidden');
+        async function validateCode() {
+            const code = document.getElementById('code').value;
+            const response = await fetch('codes.json');
+            const codes = await response.json();
+
+            if (codes[code] && !codes[code].used) {
+                // Update the code as used
+                codes[code].used = true;
+                await fetch('update-code.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(codes)
+                });
+
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('message').textContent = '';
             } else {
-                window.location.href = 'login.html'; // انتقل إلى صفحة تسجيل الدخول
+                document.getElementById('message').textContent = 'كود غير صالح!';
             }
         }
-        checkLogin();
     </script>
 </body>
 </html>
