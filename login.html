@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        #login-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-form">
+        <h2>تسجيل الدخول</h2>
+        <form>
+            <label for="code">أدخل الكود:</label>
+            <input type="text" id="code" required>
+            <button type="button" onclick="handleLogin()">تسجيل الدخول</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        async function handleLogin() {
+            const code = document.getElementById('code').value;
+            const messageElement = document.getElementById('message');
+
+            // تحميل الأكواد من ملف JSON
+            const response = await fetch('codes.json');
+            const validCodes = await response.json();
+
+            if (validCodes[code]) {
+                localStorage.setItem('loggedInUser', validCodes[code]);
+                window.location.href = 'index.html'; // انتقل إلى الصفحة الرئيسية
+            } else {
+                messageElement.textContent = 'الكود غير صالح';
+            }
+        }
+    </script>
+</body>
+</html>
