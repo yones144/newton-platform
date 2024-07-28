@@ -1,0 +1,25 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
+const auth = getAuth();
+const db = getFirestore();
+
+document.getElementById('login-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const code = document.getElementById('code').value;
+    
+    try {
+        const docRef = doc(db, 'loginCodes', code);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            // Code exists, sign in the user
+            window.location.href = 'index.html';
+        } else {
+            alert('كود غير صالح');
+        }
+    } catch (error) {
+        console.error("خطأ في تسجيل الدخول: ", error);
+        alert('حدث خطأ أثناء تسجيل الدخول');
+    }
+});
