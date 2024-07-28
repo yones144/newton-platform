@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة يونس</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB32vGflJ82W2X9w_n9zjOkr1NeZinuER8",
+            authDomain: "yones-5c807.firebaseapp.com",
+            projectId: "yones-5c807",
+            storageBucket: "yones-5c807.appspot.com",
+            messagingSenderId: "789685354526",
+            appId: "1:789685354526:web:c991dc9606c5fa0073ae0f",
+            measurementId: "G-SCXZQJ0CJ0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Function to handle login
+        async function handleLogin(event) {
+            event.preventDefault();
+            const code = document.getElementById('code').value;
+            const docRef = doc(db, 'loginCodes', code);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                // Assuming your code document contains a valid custom token
+                const customToken = docSnap.data().token;
+                await signInWithCustomToken(auth, customToken);
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('كود غير صالح');
+            }
+        }
+
+        // Check authentication state
+        auth.onAuthStateChanged(user => {
+            if (!user) {
+                document.getElementById('login-container').style.display = 'block';
+                document.getElementById('content').style.display = 'none';
+            } else {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('login-form').addEventListener('submit', handleLogin);
+        });
+    </script>
+</head>
+<body>
+    <!-- نموذج تسجيل الدخول -->
+    <div id="login-container" style="display: none;">
+        <h1>تسجيل الدخول</h1>
+        <form id="login-form">
+            <input type="text" id="code" placeholder="أدخل الكود" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
+
+    <!-- المحتوى الأساسي للموقع -->
+    <div id="content" style="display: none;">
+        <h1>منصة يونس</h1>
+        <ul class="subject-list">
+            <li><a href="subjects/physics.html">فيزياء</a></li>
+            <li><a href="subjects/chemistry.html">كيمياء</a></li>
+            <li><a href="subjects/biology.html">احياء</a></li>
+            <li><a href="subjects/islamic.html">اسلامية</a></li>
+            <li><a href="subjects/math.html">رياضيات</a></li>
+            <li><a href="subjects/arabic.html">عربي</a></li>
+            <li><a href="subjects/english.html">انكليزي</a></li>
+        </ul>
+        <div class="footer">
+            الحقوق محفوظة لدى <a href="https://t.me/tteiio">قناة سادس هيلب</a>
+        </div>
+    </div>
+</body>
+</html>
