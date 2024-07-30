@@ -6,43 +6,52 @@ body, h1, h2, ul, li {
 
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f5f5f5;
+    background: #f0f4f8;
     color: #333;
 }
 
-/* Header and main content styling */
+/* Container styling */
 .container {
-    width: 80%;
+    width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Header styling */
 h1 {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
+    color: #0056b3;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #0056b3;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
+/* Subheader styling */
 h2 {
     color: #333;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
-.lecture, .teacher-list, .semester-list {
-    margin-bottom: 20px;
+/* Lecture styling */
+.lecture {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .lecture iframe {
     width: 100%;
-    max-width: 560px;
     height: 315px;
-    border: none;
+    border-radius: 8px;
 }
 
 /* List styles */
@@ -51,56 +60,82 @@ ul {
 }
 
 li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 a {
-    color: #007bff;
+    color: #0056b3;
     text-decoration: none;
+    font-size: 1.1rem;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Footer styles */
+/* Footer styling */
 .footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: #333;
+    margin-top: 30px;
+    padding: 20px;
+    background: #0056b3;
     color: #fff;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Login form styles */
+.footer a {
+    color: #f0f4f8;
+    text-decoration: underline;
+}
+
+/* Login form styling */
 #login-form {
-    width: 300px;
-    margin: 0 auto;
+    width: 350px;
+    margin: 100px auto;
     padding: 20px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#login-form h2 {
+    color: #0056b3;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 input {
     margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     width: 100%;
-    background-color: #007bff;
+    background-color: #0056b3;
     border: none;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #003d7a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    #login-form {
+        width: 90%;
+    }
 }
