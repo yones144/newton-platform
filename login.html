@@ -19,6 +19,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* مهم لوضع النص في الأسفل */
+            width: 300px;
         }
         input {
             margin: 10px 0;
@@ -39,6 +41,15 @@
         button:hover {
             background-color: #0056b3;
         }
+        #footer-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +61,12 @@
             <button type="button" onclick="handleLogin()">تسجيل الدخول</button>
         </form>
         <p id="message"></p>
+        <div id="footer-text">
+            <p>إذا لم يكن لديك كود تسجيل الدخول يجب عليك شرائه من مطور المنصة:</p>
+            <p>طرق الشراء:</p>
+            <p>1- عن طريق الرصيد بسعر 3 آلاف رصيد أسيا للتواصل على التليجرام <a href="https://t.me/lu33e" target="_blank">رابط حساب المطور</a></p>
+            <p>2- عن طريق تجميع النقاط داخل بوت المنصة في التليجرام <a href="https://t.me/sadshelopbot" target="_blank">رابط البوت</a></p>
+        </div>
     </div>
 
     <script>
