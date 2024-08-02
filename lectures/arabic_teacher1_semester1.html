@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محاضرات عقيل الزبيدي</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        #content {
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+        }
+        #hidden {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            line-height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div id="content" class="container">
         <h1>الأستفهام</h1>
         
         <!-- محاضرة 1 -->
@@ -76,22 +93,28 @@
             <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <!-- محاضرة 3 -->
+        <!-- محاضرة 12 -->
         <div class="lecture">
-            <h2>محاضرة 3</h2>
+            <h2>محاضرة 12</h2>
             <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
         </div>
-        <!-- محاضرة 3 -->
-        <div class="lecture">
-            <h2>محاضرة 3</h2>
-            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
-        </div>
-        
-        <!-- أضف المزيد من المحاضرات حسب الحاجة -->
-        
+
         <div class="footer">
             <p>الحقوق محفوظة لدى قناة سادس هيلب <a href="https://t.me/tteiio" target="_blank">رابط القناة</a></p>
         </div>
     </div>
+
+    <!-- رسالة التحذير -->
+    <div id="hidden">لا يمكن تصوير الشاشة!</div>
+
+    <script>
+        document.addEventListener('keydown', function(e) {
+            // التحقق من ضغط المستخدم على مفتاح PrintScreen
+            if (e.key === 'PrintScreen') {
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('hidden').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
