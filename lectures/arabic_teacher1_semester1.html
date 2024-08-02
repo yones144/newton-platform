@@ -5,30 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محاضرات عقيل الزبيدي</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        #content {
-            width: 100%;
-            height: 100vh;
-            background-color: #fff;
-        }
-        #hidden {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-size: 24px;
-            line-height: 100vh;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-    </style>
 </head>
 <body>
-    <div id="content" class="container">
+    <div class="container">
         <h1>الأستفهام</h1>
         
         <!-- محاضرة 1 -->
@@ -37,35 +16,82 @@
             <iframe src="https://www.dailymotion.com/embed/video/k7NLw2S18zS3M0Bd6iK" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
         
-        <!-- أضف المزيد من المحاضرات حسب الحاجة -->
+        <!-- محاضرة 2 -->
+        <div class="lecture">
+            <h2>محاضرة 2</h2>
+            <iframe src="https://www.dailymotion.com/embed/video/" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <!-- محاضرة 3 -->
+        <div class="lecture">
+            <h2>محاضرة 3</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- محاضرة 4 -->
+        <div class="lecture">
+            <h2>محاضرة 4</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
 
+        <!-- محاضرة 5 -->
+        <div class="lecture">
+            <h2>محاضرة 5</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 6 -->
+        <div class="lecture">
+            <h2>محاضرة 6</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 7 -->
+        <div class="lecture">
+            <h2>محاضرة 7</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 8 -->
+        <div class="lecture">
+            <h2>محاضرة 8</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 9 -->
+        <div class="lecture">
+            <h2>محاضرة 9</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 10 -->
+        <div class="lecture">
+            <h2>محاضرة 10</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 11 -->
+        <div class="lecture">
+            <h2>محاضرة 11</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- محاضرة 3 -->
+        <div class="lecture">
+            <h2>محاضرة 3</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- محاضرة 3 -->
+        <div class="lecture">
+            <h2>محاضرة 3</h2>
+            <iframe width="560" height="315" src="https://www.dailymotion.com/embed/video/" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- أضف المزيد من المحاضرات حسب الحاجة -->
+        
         <div class="footer">
             <p>الحقوق محفوظة لدى قناة سادس هيلب <a href="https://t.me/tteiio" target="_blank">رابط القناة</a></p>
         </div>
     </div>
-
-    <!-- رسالة التحذير -->
-    <div id="hidden">لا يمكن تصوير الشاشة!</div>
-
-    <script>
-        function applyTemporaryEffects() {
-            const content = document.getElementById('content');
-            if (content) {
-                content.style.backgroundColor = 'black'; // تغيير اللون إلى الأسود
-                content.style.color = 'black'; // تغيير النص إلى لون أسود لجعل النص غير مرئي
-            }
-        }
-
-        function checkForScreenshot() {
-            if (document.hidden) {
-                applyTemporaryEffects();
-                document.getElementById('hidden').style.display = 'block'; // عرض رسالة التحذير
-            } else {
-                document.getElementById('hidden').style.display = 'none'; // إخفاء رسالة التحذير عند العودة
-            }
-        }
-
-        document.addEventListener('visibilitychange', checkForScreenshot);
-    </script>
 </body>
 </html>
