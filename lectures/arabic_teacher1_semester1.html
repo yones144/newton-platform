@@ -36,7 +36,7 @@
             <h2>محاضرة 1</h2>
             <iframe src="https://www.dailymotion.com/embed/video/k7NLw2S18zS3M0Bd6iK" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
-
+        
         <!-- أضف المزيد من المحاضرات حسب الحاجة -->
 
         <div class="footer">
@@ -48,11 +48,20 @@
     <div id="hidden">لا يمكن تصوير الشاشة!</div>
 
     <script>
+        function applyTemporaryEffects() {
+            const content = document.getElementById('content');
+            if (content) {
+                content.style.backgroundColor = 'black'; // تغيير اللون إلى الأسود
+                content.style.color = 'black'; // تغيير النص إلى لون أسود لجعل النص غير مرئي
+            }
+        }
+
         function checkForScreenshot() {
-            // تحقق من حالة الرؤية للصفحة
             if (document.hidden) {
-                document.getElementById('content').style.display = 'none';
-                document.getElementById('hidden').style.display = 'block';
+                applyTemporaryEffects();
+                document.getElementById('hidden').style.display = 'block'; // عرض رسالة التحذير
+            } else {
+                document.getElementById('hidden').style.display = 'none'; // إخفاء رسالة التحذير عند العودة
             }
         }
 
