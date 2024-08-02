@@ -20,19 +20,23 @@
             text-align: center;
             font-size: 24px;
             line-height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
     <div id="content" class="container">
         <h1>الأستفهام</h1>
-        
+
         <!-- محاضرة 1 -->
         <div class="lecture">
             <h2>محاضرة 1</h2>
             <iframe src="https://www.dailymotion.com/embed/video/k7NLw2S18zS3M0Bd6iK" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
-        
+
         <!-- أضف المزيد من المحاضرات حسب الحاجة -->
 
         <div class="footer">
@@ -44,25 +48,14 @@
     <div id="hidden">لا يمكن تصوير الشاشة!</div>
 
     <script>
-        let isFullscreen = false;
-
-        document.addEventListener('fullscreenchange', () => {
-            if (document.fullscreenElement) {
-                isFullscreen = true;
-            } else {
-                isFullscreen = false;
-            }
-        });
-
-        setInterval(() => {
-            if (isFullscreen) return;
-
-            // تحقق من تصغير نافذة المتصفح، وهو مؤشر ممكن على التصوير
-            if (window.outerWidth < screen.width || window.outerHeight < screen.height) {
+        function checkForScreenshot() {
+            if (document.visibilityState === 'hidden') {
                 document.getElementById('content').style.display = 'none';
                 document.getElementById('hidden').style.display = 'block';
             }
-        }, 1000);
+        }
+
+        document.addEventListener('visibilitychange', checkForScreenshot);
     </script>
 </body>
 </html>
