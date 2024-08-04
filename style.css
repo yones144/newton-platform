@@ -1,10 +1,11 @@
 /* عام */
 body {
-    font-family: Arial, sans-serif; /* اختر الخط الذي يناسبك */
-    text-align: center; /* محاذاة النصوص إلى الوسط */
+    font-family: Arial, sans-serif;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* لون الخلفية الأساسي */
+    background-color: #ffffff; /* لون خلفية الموقع أبيض */
+    color: #333; /* لون النصوص الداكنة ليظهر بوضوح على الخلفية البيضاء */
 }
 
 /* النصوص */
@@ -14,9 +15,9 @@ strong, b {
 
 /* تصميم المحاضرات */
 .lecture-content {
-    max-width: 100%; /* لضمان تناسب حجم المحتوى مع الموقع */
-    overflow: auto; /* لتجنب ظهور شريط تمرير أفقي */
+    max-width: 90%; /* حجم المحاضرات يتناسب مع الموقع */
     margin: 0 auto; /* توسيط المحتوى */
+    overflow: auto; /* لتجنب ظهور شريط تمرير أفقي */
 }
 
 /* التصميم الحديث */
@@ -33,7 +34,7 @@ nav {
 }
 
 a {
-    color: #f8f9fa; /* لون الروابط */
+    color: #3498db; /* لون الروابط */
     text-decoration: none;
 }
 
