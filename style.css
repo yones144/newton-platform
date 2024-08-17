@@ -1,86 +1,68 @@
-/* عام */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* لون خلفية الموقع أبيض */
-    color: #333; /* لون النصوص الداكنة ليظهر بوضوح على الخلفية البيضاء */
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000; /* لون النصوص الأسود */
+            background-color: #f0f0f0; /* لون الخلفية الفاتح */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-/* النصوص */
-strong, b {
-    font-weight: bold; /* النصوص تكون عريضة */
-}
+        header {
+            background-color: #4CAF50; /* لون الخلفية للأعلى */
+            color: #fff; /* لون النصوص في الأعلى */
+            padding: 1rem;
+        }
 
-/* تصميم المحاضرات */
-.lecture-content {
-    max-width: 90%; /* حجم المحاضرات يتناسب مع الموقع */
-    margin: 0 auto; /* توسيط المحتوى */
-    overflow: auto; /* لتجنب ظهور شريط تمرير أفقي */
-}
+        h1 {
+            margin: 0;
+            font-weight: bold; /* خط عريض */
+        }
 
-/* التصميم الحديث */
-header, footer {
-    background-color: #333; /* لون خلفية الرأس والتذييل */
-    color: white;
-    padding: 20px;
-}
+        .container {
+            margin: 2rem auto;
+            padding: 1rem;
+            max-width: 800px; /* تحديد عرض المحتوى */
+        }
 
-nav {
-    background-color: #555; /* لون خلفية الشريط الجانبي */
-    color: white;
-    padding: 15px;
-}
+        video {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #4CAF50; /* لون الحدود حول الفيديو */
+        }
 
-a {
-    color: #3498db; /* لون الروابط */
-    text-decoration: none;
-}
+        footer {
+            background-color: #4CAF50; /* لون الخلفية للأسفل */
+            color: #fff; /* لون النصوص في الأسفل */
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبا بكم في موقعي</h1>
+    </header>
 
-a:hover {
-    text-decoration: underline;
-}
+    <div class="container">
+        <h2>شاهد الفيديو أدناه</h2>
+        <video controls>
+            <source src="your-video.mp4" type="video/mp4">
+            متصفحك لا يدعم عنصر الفيديو.
+        </video>
+    </div>
 
-.container {
-    width: 90%;
-    max-width: 1200px; /* تحديد أقصى عرض */
-    margin: 0 auto;
-}
-
-/* ألوان جذابة */
-.primary-color {
-    color: #3498db; /* لون رئيسي جذاب */
-}
-
-.secondary-color {
-    color: #e74c3c; /* لون ثانوي جذاب */
-}
-
-/* ألوان الخلفية */
-.bg-primary {
-    background-color: #3498db; /* خلفية بلون جذاب */
-}
-
-.bg-secondary {
-    background-color: #e74c3c; /* خلفية بلون جذاب */
-}
-
-/* تنسيقات إضافية */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    color: #333;
-}
-
-button {
-    background-color: #3498db; /* لون أزرار */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
+    <footer>
+        جميع الحقوق محفوظة &copy; 2024
+    </footer>
+</body>
+</html>
