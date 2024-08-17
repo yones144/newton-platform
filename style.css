@@ -1,68 +1,114 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #000; /* لون النصوص الأسود */
-            background-color: #f0f0f0; /* لون الخلفية الفاتح */
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+/* ملف CSS لموقعك الإلكتروني */
 
-        header {
-            background-color: #4CAF50; /* لون الخلفية للأعلى */
-            color: #fff; /* لون النصوص في الأعلى */
-            padding: 1rem;
-        }
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* خلفية فاتحة بشكل عام */
+    direction: rtl; /* ترتيب النصوص من اليمين إلى اليسار */
+    text-align: right; /* محاذاة النصوص إلى اليمين */
+}
 
-        h1 {
-            margin: 0;
-            font-weight: bold; /* خط عريض */
-        }
+/* واجهة تسجيل الدخول */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
-        .container {
-            margin: 2rem auto;
-            padding: 1rem;
-            max-width: 800px; /* تحديد عرض المحتوى */
-        }
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        video {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #4CAF50; /* لون الحدود حول الفيديو */
-        }
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-        footer {
-            background-color: #4CAF50; /* لون الخلفية للأسفل */
-            color: #fff; /* لون النصوص في الأسفل */
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>مرحبا بكم في موقعي</h1>
-    </header>
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    <div class="container">
-        <h2>شاهد الفيديو أدناه</h2>
-        <video controls>
-            <source src="your-video.mp4" type="video/mp4">
-            متصفحك لا يدعم عنصر الفيديو.
-        </video>
-    </div>
+.login-container button:hover {
+    background-color: #45a049;
+}
 
-    <footer>
-        جميع الحقوق محفوظة &copy; 2024
-    </footer>
-</body>
-</html>
+/* الصفحة الرئيسية */
+.main-page {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.main-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section {
+    background-color: #000; /* خلفية سوداء للأقسام */
+    color: #fff; /* لون النصوص أبيض */
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* صفحة المدرسين */
+.teachers-page {
+    padding: 20px;
+}
+
+.teacher {
+    background-color: #4CAF50; /* لون خلفية بارز */
+    color: #fff; /* لون النصوص أبيض */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* صفحة المحاضرات */
+.lectures-page {
+    padding: 20px;
+}
+
+.lecture {
+    margin: 20px 0;
+}
+
+.lecture video {
+    width: 100%;
+    max-width: 600px; /* تحديد أقصى عرض للفيديو */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #4CAF50; /* لون الحدود حول الفيديو */
+    border-radius: 10px;
+}
+
+/* صفحة الفصول الدراسية */
+.classes-page {
+    padding: 20px;
+}
+
+.class-section {
+    background-color: #000; /* خلفية سوداء للأقسام */
+    color: #fff; /* لون النصوص أبيض */
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
